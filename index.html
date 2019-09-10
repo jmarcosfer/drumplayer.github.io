@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Jorge's Practice Buddy</title>
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Practice Buddy</h1>
-    <img src="images/practice-station.jpg" alt="A practice drum pad with drumsticks and a 'Stick Control' music sheet.">
-    <p>Welcome to Practice Buddy, a site that brings together simple <strong>media</strong> and <strong>tools</strong> to get you on your daily practice as quickly as possible with as little hassle as necessary.</p>
-    <p>Media includes:</p>
-    <ul>
-      <li>Images: short written music sheet snippets of patterns and grooves for you to practice</li>
-      <li>Audio: some written exercises will be accompanied by a recording showing you how it sounds when played</li>
-      <li>Videos of well-known drummers playing a given exercise/part</li>
-    </ul>
-    <p>Tools include:</p>
-    <ol>
-      <li>An exercise/groove aggregator working under the hood to power the media displayed for the "Exercise of the Day" section. Media will be mainly gathered initially from <a href="https://www.drummerworld.com/">DrummerWorld</a>.</li>
-      <li>A metronome app to help your time-keeping practice and play along with during your session</li>
-      <li>an empty line to check github desktop is working</li>
-      <li>[future feature] A multitrack sampler that will allow you to record yourself as you practice – you'll be able to analyse your own playing from these recordings and assess what changes you need to make to your playing, as well as being able to playing along with yourself in multiple layers!</li>
-    </ol>
-    <button>Change user</button>
-    <script src="scripts/main.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Hexadrum Online Instrument</title>
+  <script src="sampler-iter.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>HEXADRUM ONLINE PLAYER</h1>
+    <button id="trigger" type="button">Start Audio</button>
+  </header>
+  <div id="container">
+    <img alt="Shows a hexadrum from above" src="images/hexadrum.png">
+    <!-- <div id="hx-set"></div> -->
+    <div class="hexadrum" id="hx-snare"></div>
+    <div class="hexadrum" id="hx-tom1"></div>
+    <div class="hexadrum" id="hx-tom2"></div>
+    <div class="hexadrum" id="hx-cajon"></div>
+    <div class="hexadrum" id="hx-hihat"></div>
+    <div class="hexadrum" id="hx-kick"></div>
+  </div>
+</body>
 </html>
