@@ -16,7 +16,7 @@ div {
   margin: 1% auto;
 }
 
-#trigger {
+#start-audio {
   background-color: #f7941d;
   block-size: 3em;
   color: #ffffff;
@@ -40,7 +40,7 @@ h1 {
   font-weight:500;
 }
 
-#container {
+.hx-wrapper {
   position: relative;
   /* background-image: url("images/hexadrum.png");
   background-size: 100%;
@@ -51,17 +51,28 @@ h1 {
   z-index: 0;
 }
 
+#online-hx-player {
+  /* Nothing here yet */
+  position: relative;
+}
+
 img {
   max-width: 60%;
   height: auto;
 }
 
-.hexadrum {
+.play-hx {
   cursor: pointer;
   text-align: center;
   position: absolute;
   z-index: 1;
   margin: 2%;
+}
+
+#hexadrum {
+  background-image: url(../images/hexadrum.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat; 
 }
 
 #hx-snare {
