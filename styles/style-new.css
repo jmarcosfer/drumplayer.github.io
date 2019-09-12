@@ -57,24 +57,21 @@ button:active {
 .hx-wrapper {
   display: flex;
   flex: 0 1 100vw;
-  height: auto;
+  height: 80%;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
   
 }
 
-.play-hx {
+#hexadrum {
   display: flex;
+  flex: 0 1 100vw;
+  margin: 0;
+  padding: 0.5rem;
+  position: relative;
 }
 
-#hexadrum {
-  background: url(../images/hexadrum.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 70vh;
-  flex: 0 1 100vw;
-  margin: 0 0;
-  padding: 0.5rem;
+.hx-play {
+  cursor: pointer;
 }
