@@ -1,0 +1,68 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #ffffff;
+  height: auto;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  box-shadow: 30px 0px 40px rgba(0,0,0,0.2),
+  -30px 0px 40px rgba(0,0,0,0.2);
+  text-align: center;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  display: block;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#start-audio {
+  padding: 0.3rem 1rem;
+  border: 0.1rem #f7941d solid;
+  display: inline-block;
+  margin: 1.1rem 0 0;
+  border-radius: 0.4rem;
+  background-color: #f7941d;
+  color: #ffffff;
+  transition: background-color 500ms ease;
+}
+
+#start-audio:hover {
+  background-color: #f9b35f;
+  color: black;
+}
+
+.hx-wrapper {
+  display: flex;
+  flex: 0 1 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0; 
+}
+
+.play-hx {
+  display: flex;
+}
+
+#hexadrum {
+  background: url(../images/hexadrum.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  flex: 0 1 100vw;
+  margin: 0;
+  padding: 0.5rem;
+}
