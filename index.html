@@ -4,23 +4,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="./styles/style.css"> -->
   <title>Hexadrum Online Instrument</title>
   <script src="./scripts/main.js" defer></script>
 </head>
 <body>
   <header>
     <h1>PRUEBA EL HEXADRUM® ONLINE</h1>
-    <button id="trigger" type="button">Click para comenzar</button>
+    <button id="start-audio" type="button">Click para comenzar</button>
   </header>
-  <div id="container">
-    <img alt="Muestra un Hexadrum visto desde arriba." src="images/hexadrum.png">
-    <div class="hexadrum" id="hx-snare"></div>
-    <div class="hexadrum" id="hx-tom1"></div>
-    <div class="hexadrum" id="hx-tom2"></div>
-    <div class="hexadrum" id="hx-cajon"></div>
-    <div class="hexadrum" id="hx-hihat"></div>
-    <div class="hexadrum" id="hx-kick"></div>
+  <div id="online-hx-player">
+    <div id="hx-wrapper">
+      <!-- <img src="images/hexadrum.png" alt="Muestra un Hexadrum visto desde arriba."> -->
+      <div class="play-hx" id="hexadrum"></div>
+      <div class="play-hx" id="hx-snare"></div>
+      <div class="play-hx" id="hx-tom1"></div>
+      <div class="play-hx" id="hx-tom2"></div>
+      <div class="play-hx" id="hx-cajon"></div>
+      <div class="play-hx" id="hx-hihat"></div>
+      <div class="play-hx" id="hx-kick"></div>
+    </div>
   </div>
 </body>
 </html>
