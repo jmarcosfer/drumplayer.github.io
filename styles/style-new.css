@@ -54,22 +54,26 @@ button:active {
   color: black;
 }
 
-.hx-wrapper {
+#online-hx-player {
+  display: flex;
+
+}
+
+#hx-wrapper {
   display: flex;
   flex: 0 1 100vw;
   height: 80%;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
-  
 }
 
 #hexadrum {
-  display: flex;
-  flex: 0 1 100vw;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0;
   position: relative;
+  height: auto;
+  width: 80%;
 }
 
 .hx-play {
