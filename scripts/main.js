@@ -43,3 +43,9 @@ btn.onclick = function() {
     }
   }).catch(e => console.log("There was a problem: " + e.message));
 }
+
+// code to calculate image map coords upon viewport resizing:
+
+$(function(e) {
+  $('img[usemap]').rwdImageMaps();
+});

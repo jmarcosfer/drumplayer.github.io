@@ -68,6 +68,17 @@ button:active {
   padding: 1rem 0;
 }
 
+#hx-canvas {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
 #hexadrum {
   margin: 0;
   padding: 0;
