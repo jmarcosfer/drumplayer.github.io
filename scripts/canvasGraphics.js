@@ -12,9 +12,9 @@ function setCanvas()
   hxCanvas.setAttribute('width', hxImg.clientWidth +'px');
   hxCanvas.setAttribute('height', hxImg.clientHeight +'px');
 
-  hxc.fillStyle = 'rgba(249, 179, 95, 0.4)';
-  hxc.strokeStyle = 'rgba(247, 148, 29, 0.6)';
-  hxc.lineWidth = 1;
+  hxc.fillStyle = 'rgba(249, 179, 95, 0.25)';
+  hxc.strokeStyle = 'rgba(247, 148, 29, 0)';
+  hxc.lineWidth = 0;
   hxc.lineJoin = 'round';
 }
 
@@ -47,19 +47,25 @@ function myHover(element)
   drawPoly(areaCoords);
 }
 
-// function myClick(element)
-// {
-//   hxc.fillStyle = 'rgba(249, 179, 95, 1)';
-//   myHover(element);
-// }
+function myClick(element)
+{
+  hxc.lineWidth = 2;
+  hxc.strokeStyle = 'rgba(247, 148, 29, 0.7)';
+  myHover(element);
+}
 
-// function myClickOut()
-// {
-//   myLeave();
-// }
+function myClickOut(element)
+{
+  hxc.lineWidth = 0;
+  hxc.strokeStyle = 'rgba(247, 148, 29, 0)';
+  myLeave();
+  myHover(element);
+}
 
 $( setCanvas() );
 
 window.onresize = () => {
   setCanvas();
 };
+
+/* ASSIGN (myHover) & (myLeave) HANDLERS TO DIFFERENT PAIRS OF EVENTS DEPENDING ON WHETHER TOUCHSCREEN or !TOUCHSCREEN : */

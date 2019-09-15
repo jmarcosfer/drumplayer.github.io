@@ -5,6 +5,11 @@ const btn = document.querySelector('button');
 let playSample = null; // this will be our playback object later
 
 let bufferNames = [];
+for (x=0; x < filePaths.length; x++) 
+{
+  bufferNames.push(filePaths[x].slice(filePaths[x].indexOf('/') + 1, filePaths[x].indexOf('.mp3')));
+}
+
 let audioBufferColl = {};
 
 // ADD: plural, getFiles, returns an array of audioBuffers
@@ -15,7 +20,6 @@ async function getFiles(ctx, paths) {
     const arrayBuffer = await response.arrayBuffer();
     const tempAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
     console.log('I have got decoded audio!!');
-    bufferNames.push(paths[i].slice(paths[i].indexOf('/') + 1, paths[i].indexOf('.mp3')));
     audioBufferColl[bufferNames[i]] = tempAudioBuffer;
   }
   return audioBufferColl;
@@ -37,7 +41,7 @@ btn.onclick = function() {
   getFiles(ctx, filePaths)
   .then((bufferColl) => {             // pass each of the returned buffers in the array to a different onmousedown handler
     for (let j = 0; j < bufferNames.length; j++) {
-      document["getElementById"](bufferNames[j])["onmousedown"] = () => { 
+      document["getElementById"](bufferNames[j])["onpointerdown"] = () => { 
         bufferPlay(ctx, bufferColl[bufferNames[j]]); 
       };
     }
