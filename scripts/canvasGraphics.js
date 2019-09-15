@@ -4,21 +4,19 @@ const hxCanvas = byId('hx-canvas');
 const hxc = hxCanvas.getContext('2d');
 const hxImg = byId('hexadrum');
 
-let x, y, w, h;
-x = hxImg.offsetLeft;
-y = hxImg.offsetTop;
-w = hxImg.clientWidth;
-h = hxImg.clientHeight;
+function setCanvas() 
+{
+  hxCanvas.style.left = hxImg.offsetLeft +'px';
+  hxCanvas.style.top = hxImg.offsetTop +'px';
 
-hxCanvas.style.left = x+'px';
-hxCanvas.style.top = y+'px';
+  hxCanvas.setAttribute('width', hxImg.clientWidth +'px');
+  hxCanvas.setAttribute('height', hxImg.clientHeight +'px');
 
-hxCanvas.setAttribute('width', w+'px');
-hxCanvas.setAttribute('height', h+'px');
-
-hxc.fillStyle = 'red';
-hxc.strokeStyle = 'red';
-hxc.lineWidth = 4;
+  hxc.fillStyle = 'rgba(249, 179, 95, 0.4)';
+  hxc.strokeStyle = 'rgba(247, 148, 29, 0.6)';
+  hxc.lineWidth = 1;
+  hxc.lineJoin = 'round';
+}
 
 function drawPoly(coordStr) 
 {
@@ -48,3 +46,20 @@ function myHover(element)
   let areaCoords = element.getAttribute('coords');
   drawPoly(areaCoords);
 }
+
+// function myClick(element)
+// {
+//   hxc.fillStyle = 'rgba(249, 179, 95, 1)';
+//   myHover(element);
+// }
+
+// function myClickOut()
+// {
+//   myLeave();
+// }
+
+$( setCanvas() );
+
+window.onresize = () => {
+  setCanvas();
+};
