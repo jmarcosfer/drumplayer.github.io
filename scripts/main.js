@@ -39,13 +39,27 @@ btn.onclick = function() {
   ctx.resume();
   console.log('ready...... GO!');
   getFiles(ctx, filePaths)
-  .then((bufferColl) => {             // pass each of the returned buffers in the array to a different onmousedown handler
+  .then((bufferColl) => { // pass each of the returned buffers in the array to a different onpointerdown handler
     for (let j = 0; j < bufferNames.length; j++) {
-      document["getElementById"](bufferNames[j])["onpointerdown"] = () => { 
-        bufferPlay(ctx, bufferColl[bufferNames[j]]); 
+      byId(bufferNames[j])["onpointerover"] = () => {
+        myHover(byId(bufferNames[j]));
+      }
+
+      byId(bufferNames[j])["onpointerdown"] = () => {
+        bufferPlay(ctx, bufferColl[bufferNames[j]]);
+        myClick(byId(bufferNames[j]));
       };
+
+      byId(bufferNames[j])["onpointerup"] = () => {
+        myClickOut(byId(bufferNames[j]));
+      }
+
+      byId(bufferNames[j])["onpointerout"] = () => {
+        myLeave();
+      }
     }
   }).catch(e => console.log("There was a problem: " + e.message));
+  byId("start-audio").textContent = "Tap the image below to play the Hexadrum!"
 }
 
 // code to calculate image map coords upon viewport resizing:

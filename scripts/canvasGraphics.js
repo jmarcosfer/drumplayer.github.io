@@ -67,5 +67,3 @@ $( setCanvas() );
 window.onresize = () => {
   setCanvas();
 };
-
-/* ASSIGN (myHover) & (myLeave) HANDLERS TO DIFFERENT PAIRS OF EVENTS DEPENDING ON WHETHER TOUCHSCREEN or !TOUCHSCREEN : */
