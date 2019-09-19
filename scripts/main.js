@@ -1,4 +1,5 @@
-const ctx = new AudioContext();
+const ctx = new (window.AudioContext || window.webkitAudioContext);
+
 const filePaths = ['samples/hx-kick.mp3', 'samples/hx-cajon.mp3', 'samples/hx-hihat.mp3', 'samples/hx-snare.mp3', 'samples/hx-tom1.mp3', 'samples/hx-tom2.mp3'];
 const btn = document.querySelector('button');
 
