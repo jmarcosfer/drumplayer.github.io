@@ -36,9 +36,11 @@ function bufferPlay(ctx, buffer) {
 
 /////////////////////////////////////////////////////
 // now run functions defined above! assigned to event handlers...
-btn.onclick = function() {
+btn.onpointerdown = function() {
   ctx.resume();
   console.log('ready...... GO!');
+  //TODO make button hidden 
+  byId("start-audio").style.visibility='hidden';
   getFiles(ctx, filePaths)
   .then((bufferColl) => { // pass each of the returned buffers in the array to a different onpointerdown handler
     for (let j = 0; j < bufferNames.length; j++) {
