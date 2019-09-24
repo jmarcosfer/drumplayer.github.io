@@ -45,7 +45,7 @@ button {
   opacity: 1;
   transition: background-color 500ms ease, visibility 3000ms ease-out, opacity 3000ms ease-out;
   height: auto;
-  z-index: 2;
+  z-index: 3;
 }
 
 #start-audio:active {
@@ -75,9 +75,20 @@ button {
   max-width: 100vw;
 }
 
+#lockedCanvas {
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 3000ms ease-out, opacity 3000ms ease-out, background-color 500ms ease;
+}
+
+#lockedCanvas:hover {
+  background-color: rgba(227, 183, 129, 0.35);
+}
+
 #hx-canvas {
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .flex-item {

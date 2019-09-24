@@ -43,7 +43,10 @@ btn.onpointerdown = function() {
   byId("start-audio").style.visibility = 'hidden';
   byId("start-audio").style.opacity = 0;
   byId("start-audio").style.color = "black";
-  byId("start-audio").textContent = "Tap the Hexadrum to hear it!"
+  byId("start-audio").textContent = "Tap the Hexadrum to hear it!";
+
+  byId("lockedCanvas").style.opacity = 0;
+  byId("lockedCanvas").style.visibility = 'hidden';
 
   getFiles(ctx, filePaths)
   .then((bufferColl) => { // pass each of the returned buffers in the array to a different onpointerdown handler
