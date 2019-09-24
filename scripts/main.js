@@ -39,8 +39,12 @@ function bufferPlay(ctx, buffer) {
 btn.onpointerdown = function() {
   ctx.resume();
   console.log('ready...... GO!');
-  //TODO make button hidden 
-  byId("start-audio").style.visibility='hidden';
+  
+  byId("start-audio").style.visibility = 'hidden';
+  byId("start-audio").style.opacity = 0;
+  byId("start-audio").style.color = "black";
+  byId("start-audio").textContent = "Tap the Hexadrum to hear it!"
+
   getFiles(ctx, filePaths)
   .then((bufferColl) => { // pass each of the returned buffers in the array to a different onpointerdown handler
     for (let j = 0; j < bufferNames.length; j++) {
@@ -62,7 +66,6 @@ btn.onpointerdown = function() {
       }
     }
   }).catch(e => console.log("There was a problem: " + e.message));
-  byId("start-audio").textContent = "Tap the Hexadrum below!"
 }
 
 // code to calculate image map coords upon viewport resizing:
