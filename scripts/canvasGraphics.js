@@ -9,13 +9,21 @@ const lockedCtx = lockedCanvas.getContext('2d');
 
 function setLockedCanvas()
 {
-  lockedCanvas.style.left = hxImg.offsetLeft +'px';
-  lockedCanvas.style.top = hxImg.offsetTop +'px';
+  lockedCanvas.style.left = hxImg.left +'px';
+  lockedCanvas.style.top = hxImg.top +'px';
 
-  lockedCanvas.setAttribute('width', hxImg.width +'px');
-  lockedCanvas.setAttribute('height', hxImg.height +'px');
+  lockedCanvas.setAttribute('width', hxImg.clientWidth +'px');
+  lockedCanvas.setAttribute('height', hxImg.clientHeight +'px');
 
-  lockedCtx.fillStyle = 'rgba(227, 183, 129, 0.8)';
+  let gradientStartX = Math.floor(hxImg.clientWidth/2);
+  let gradientStartY = Math.floor(hxImg.clientHeight/2);
+  let gradientInner = Math.floor(hxImg.clientWidth * 0.2);
+  let gradientOuter = Math.floor(hxImg.clientWidth * 0.85);
+  let lockGradient = lockedCtx.createRadialGradient(gradientStartX, gradientStartY, gradientInner, gradientStartX, gradientStartY, gradientOuter);
+  lockGradient.addColorStop(0, 'rgba(227, 183, 129, 0.85)');
+  lockGradient.addColorStop(0.7, 'rgba(227, 183, 129, 0)');
+
+  lockedCtx.fillStyle = lockGradient;
   lockedCtx.lineWidth = 0;
 
   lockedCtx.fillRect(0, 0, lockedCanvas.width, lockedCanvas.height);
